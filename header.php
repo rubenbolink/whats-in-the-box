@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#121212" id="themeColorMeta">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Box-Zolder</title>
+    <title>Whats-In-The-Box</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="assets/icon_v3.png">
+    <link rel="icon" type="image/png" href="assets/icon_v8.png">
     
     <!-- Fonts: Inter (UI) & Outfit (Headings) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -220,8 +220,8 @@
 <body>
     <nav class="navbar">
         <a href="index.php" class="nav-brand">
-            <img src="assets/icon_v3.png" alt="Box-Zolder">
-            <span>Zolder</span>
+            <img src="assets/icon_v8.png" alt="Whats-In-The-Box">
+            <span>Whats-In-The-Box</span>
         </a>
         <div style="display:flex; gap: 10px; align-items: center;">
              <!-- Debug/Reset Button -->

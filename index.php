@@ -43,7 +43,7 @@ if ($search) {
             <div style="font-weight: 600;">Scan QR</div>
         </a>
         <a href="create-box.php" class="card clickable text-center" style="margin:0;">
-            <div style="font-size: 2rem; margin-bottom: 4px;">📦</div>
+            <img src="assets/icon_v8.png" alt="Doos" style="width: 64px; height: 64px; margin-bottom: 4px;">
             <div style="font-weight: 600; color: var(--text-main);">Nieuwe Doos</div>
         </a>
     </div>
@@ -65,7 +65,7 @@ if ($search) {
     
     <?php if (empty($results)): ?>
         <div class="text-center" style="padding: 60px 20px; opacity: 0.6;">
-            <div style="font-size: 3rem; margin-bottom: 10px;">📦</div>
+            <img src="assets/icon_v8.png" alt="Doos" style="width: 80px; height: 80px; margin-bottom: 10px; opacity: 0.8;">
             <p class="text-muted">Je zolder is nog leeg (of heel georganiseerd!).</p>
         </div>
     <?php else: ?>
@@ -156,7 +156,7 @@ if ($search) {
         data.forEach(item => {
             // Determine icon and details based on type
             const isBox = item.type === 'box';
-            const icon = isBox ? '📦' : '📄';
+            const icon = isBox ? '<img src="assets/icon_v8.png" alt="box" style="width: 18px; height: 18px; vertical-align: text-bottom;">' : '📄';
             const title = item.title;
             const subtitle = item.subtitle;
             const url = `box.php?qr=${encodeURIComponent(item.id)}`; // API returns qr_code as id for boxes

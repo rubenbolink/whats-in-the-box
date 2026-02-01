@@ -1,10 +1,10 @@
-const CACHE_NAME = 'zolder-v3';
+const CACHE_NAME = 'zolder-v8';
 const ASSETS = [
     './',
     './index.php',
     './header.php',
     // './assets/css/style.css', // Removed as we use inline styles in header.php
-    './assets/icon_v3.png',
+    './assets/icon_v8.png',
     './assets/js/offline-db.js?v=2.1', // Version query string to bust cache
     './assets/lib/html5-qrcode.min.js',
     './assets/lib/qrcode.min.js',
