@@ -1,0 +1,20 @@
+{
+  "name": "Box-Zolder",
+  "short_name": "Zolder",
+  "start_url": "./index.php",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#C19A6B",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
