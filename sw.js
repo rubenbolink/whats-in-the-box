@@ -1,4 +1,4 @@
-const CACHE_NAME = 'zolder-v8';
+const CACHE_NAME = 'zolder-v9';
 const ASSETS = [
     './',
     './index.php',
@@ -14,7 +14,8 @@ const ASSETS = [
 self.addEventListener('install', event => {
     self.skipWaiting();
     event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+        // Per bestand cachen: één mislukte (bijv. externe) URL mag de installatie niet breken
+        caches.open(CACHE_NAME).then(cache => Promise.all(ASSETS.map(u => cache.add(u).catch(() => null))))
     );
 });
 
@@ -29,11 +30,13 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+    // Alleen GET via de cache; POST/uploads altijd direct naar het netwerk
+    if (event.request.method !== 'GET') return;
     if (event.request.mode === 'navigate') {
         // Network first for pages to ensure fresh content
         event.respondWith(
             fetch(event.request).catch(() => {
-                return caches.match(event.request) || caches.match('./index.php');
+                return caches.match(event.request).then(r => r || caches.match('./index.php'));
             })
         );
     } else {
